@@ -4,6 +4,8 @@ public abstract class Player {
     /* Abstract class variables */
     protected String name;
     protected String profession;
+    protected String basicAttack;
+    protected String specialAttack;
     protected int level;
     protected int life;
     protected int strength;
@@ -13,20 +15,23 @@ public abstract class Player {
     protected Boolean isWon;
 
     /* Abstract class constructor*/
-    public Player (String name, String profession, int level, int strength, int agility, int intelligence){
+    public Player (String name, String profession, String basicAttack, String specialAttack, int level, int strength, int agility, int intelligence){
         this.name=name;
         this.profession=profession;
-        this.level=level;
-        this.strength=strength;
-        this.agility=agility;
-        this.intelligence=intelligence;
+        this.basicAttack=basicAttack;
+        this.specialAttack=specialAttack;
+        setStrength(strength);
+        setAgility(agility);
+        setIntelligence(intelligence);
+        setLevel(level);
+        setLife(this.getLevel()*5);
         setAlive(true);
         setWon(false);
     }
 
-    /* Abstract class methods*/
-    public void basicAttack(){};
-    public void specialAttack(){};
+    /* Class methods*/
+    public void basicAttack(Player player){}
+    public void specialAttack(Player player){}
 
     /* toString */
     @Override
@@ -60,6 +65,22 @@ public abstract class Player {
 
     public void setProfession(String profession) {
         this.profession = profession;
+    }
+
+    public String getBasicAttack() {
+        return basicAttack;
+    }
+
+    public void setBasicAttack(String basicAttack) {
+        this.basicAttack = basicAttack;
+    }
+
+    public String getSpecialAttack() {
+        return specialAttack;
+    }
+
+    public void setSpecialAttack(String specialAttack) {
+        this.specialAttack = specialAttack;
     }
 
     public int getLevel() {
