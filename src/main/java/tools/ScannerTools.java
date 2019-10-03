@@ -16,4 +16,8 @@ public class ScannerTools {
     public static Boolean isValidLevel (String userInput) {
         return Integer.parseInt(String.valueOf(userInput)) <= 100 && Integer.parseInt(String.valueOf(userInput)) > 0;
     }
+
+    public static Boolean isNumber (String userInput) {
+        return userInput.matches("[0-9]*");
+    }
 }
