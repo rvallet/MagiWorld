@@ -15,15 +15,15 @@ public class CreatePlayer {
         String userInputClass;
         do {
             System.out.println("Veuillez choisir la classe de votre personnage (1 : Guerrier, 2 : Rôdeur, 3 : Mage)");
-            System.out.print(" > ");
+            System.out.print("||"+name+"> ");
             userInputClass= ScannerTools.readLine();
-        } while (!ScannerTools.isValidChoice(userInputClass));
+        } while (!ScannerTools.isValidChoice(userInputClass,1,3));
 
         /* Choix du level */
         String userInputLevel;
         do {
             System.out.println("Niveau de votre personnage (1 à 100)");
-            System.out.print(" > ");
+            System.out.print("||"+name+"> ");
             userInputLevel=ScannerTools.readLine();
         } while (!ScannerTools.isValidLevel(userInputLevel));
         int userLevel = Integer.parseInt(String.valueOf(userInputLevel));
@@ -34,8 +34,7 @@ public class CreatePlayer {
         do {
             do {
                 System.out.println("Force de votre personnage (0 à " + userLevel + ")\n" + "Il reste " + leftPoints + " points à répartir");
-
-                System.out.print(" > ");
+                System.out.print("||"+name+"> ");
                 userInputStr = ScannerTools.readLine();
             } while (!ScannerTools.isNumber(userInputStr));
             userStr = Integer.parseInt(String.valueOf(userInputStr));
@@ -47,7 +46,7 @@ public class CreatePlayer {
         do {
             do {
                 System.out.println("Agilité de votre personnage (0 à " + userLevel + ")\n" + "Il reste " + leftPoints + " points à répartir");
-                System.out.print(" > ");
+                System.out.print("||"+name+"> ");
                 userInputAgi = ScannerTools.readLine();
             } while (!ScannerTools.isNumber(userInputAgi));
             userAgi = Integer.parseInt(String.valueOf(userInputAgi));
@@ -59,7 +58,7 @@ public class CreatePlayer {
         do {
             do {
                 System.out.println("Intelligence de votre personnage (0 à " + userLevel + ")\n" + "Il reste " + leftPoints + " points à répartir");
-                System.out.print(" > ");
+                System.out.print("||"+name+"> ");
                 userInputInt = ScannerTools.readLine();
             } while (!ScannerTools.isNumber(userInputInt));
             userInt = Integer.parseInt(String.valueOf(userInputInt));

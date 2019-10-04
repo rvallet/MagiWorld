@@ -9,8 +9,8 @@ public class ScannerTools {
         return sc.nextLine();
     }
 
-    public static Boolean isValidChoice (String userInput) {
-        return userInput.length()== 1 ? userInput.matches("[1-3]*") : false;
+    public static Boolean isValidChoice (String userInput, int minChoice, int maxChoice) {
+        return userInput.length()== 1 ? userInput.matches("["+minChoice+"-"+maxChoice+"]*") : false;
     }
 
     public static Boolean isValidLevel (String userInput) {
