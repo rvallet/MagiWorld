@@ -1,7 +1,6 @@
 package main.java.game;
 
 import main.java.player.*;
-import main.java.tools.ScannerTools;
 
 public class LaunchMagiWorld {
 
@@ -22,7 +21,7 @@ public class LaunchMagiWorld {
             else System.out.println(p2.getName()+" est mort");
         } while (!p1.getWon() && !p2.getWon());
 
-        /* Annonce de la victoire */
+        /* Annonce de la défaite */
         if (p1.getWon())
             System.out.println(p2.getName()+" a perdu !");
         else

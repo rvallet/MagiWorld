@@ -29,8 +29,19 @@ public abstract class Player {
         setWon(false);
     }
 
+    /**
+     * Méthode qui détermine le comportement de l'attaque basique du joueur.
+     * Le comportement varie suivant l'instance du joeur passé en paramètre de cette méthode
+     * @param player L'instance du joueur
+     */
     /* Class methods*/
     public void basicAttack(Player player){}
+
+    /**
+     * Méthode qui détermine le comportement de l'attaque spéciale du joueur.
+     * Le comportement varie suivant l'instance du joeur passé en paramètre de cette méthode
+     * @param player L'instance du joueur
+     */
     public void specialAttack(Player player){}
 
     /* toString */
