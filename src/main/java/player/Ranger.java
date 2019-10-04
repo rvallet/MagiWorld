@@ -5,7 +5,7 @@ public class Ranger extends Player {
     /* Class constructor*/
     public Ranger(String name, int level, int strength, int agility, int intelligence) {
         super(name, "Rôdeur", "Tir à l’Arc", "Concentration", level, strength, agility, intelligence);
-        System.err.println(this.toString());
+        System.out.println(this.toString());
     }
 
     /* Class methods*/
