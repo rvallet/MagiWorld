@@ -9,11 +9,15 @@ public class ScannerTools {
         return sc.nextLine();
     }
 
-    public static Boolean isValidChoice (String userInput) {
-        return userInput.length()== 1 ? userInput.matches("[1-3]*") : false;
+    public static Boolean isValidChoice (String userInput, int minChoice, int maxChoice) {
+        return userInput.length()== 1 ? userInput.matches("["+minChoice+"-"+maxChoice+"]*") : false;
     }
 
     public static Boolean isValidLevel (String userInput) {
         return Integer.parseInt(String.valueOf(userInput)) <= 100 && Integer.parseInt(String.valueOf(userInput)) > 0;
+    }
+
+    public static Boolean isNumber (String userInput) {
+        return userInput.matches("[0-9]*");
     }
 }

@@ -1,51 +1,31 @@
 package main.java.game;
 
-import main.java.player.Player;
-import main.java.player.Ranger;
-import main.java.player.Warrior;
-import main.java.player.Wizard;
+import main.java.player.*;
 import main.java.tools.ScannerTools;
 
 public class LaunchMagiWorld {
 
     public static void main(String[] args) {
-        System.out.println("*** MagiWorld ***");
+        System.out.println("*** MagiWorld ***\n");
 
-        System.out.println("Création du personnage du Joueur 1 :");
-        String userInputClass;
+        /* Création des joueurs */
+        Player p1 = new CreatePlayer().playerMaker("Joueur 1");
+        Player p2 = new CreatePlayer().playerMaker("Joueur 2");
+
+        /* Combats des joueurs */
         do {
-            System.out.println("Veuillez choisir la classe de vore personnage (1 : Guerrier, 2 : Rôdeur, 3 : Mage)");
-            System.out.print(" > ");
-            userInputClass=ScannerTools.readLine();
-        } while (!ScannerTools.isValidChoice(userInputClass));
+            if (p1.getAlive())
+            FightResolve.playerAttack(p1,p2);
+            else System.out.println(p1.getName()+" est mort");
+            if (p2.getAlive())
+            FightResolve.playerAttack(p2,p1);
+            else System.out.println(p2.getName()+" est mort");
+        } while (!p1.getWon() && !p2.getWon());
 
-        switch (userInputClass) {
-            case "1":
-                Player p1 = new Warrior("Joueur 1", 10, 10, 0, 0);
-                break;
-            case "2":
-                Player p2 = new Ranger("Joueur 2", 10, 0, 10, 0);
-                break;
-            case"3":
-                Player p3 = new Wizard("Joueur 3", 10, 0, 0, 10);
-                break;
-            default:
-                System.out.println("Choix erroné");
-        }
-
-        /* Tests : START */
-/*        Player p1 = new Warrior("Joueur 1", 10, 10, 0, 0);
-        Player p2 = new Ranger("Joueur 2", 10, 0, 10, 0);
-        Player p3 = new Wizard("Joueur 3", 10, 0, 0, 10);
-
-        p1.basicAttack(p2);
-        p2.basicAttack(p1);
-        p3.basicAttack(p3);
-
-        p1.specialAttack(p2);
-        p2.specialAttack(p2);
-        p2.basicAttack(p1);
-        p3.specialAttack(p3);*/
-        /* Tests : END */
+        /* Annonce de la victoire */
+        if (p1.getWon())
+            System.out.println(p2.getName()+" a perdu !");
+        else
+            System.out.println(p1.getName()+" a perdu !");
     }
 }
