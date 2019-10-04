@@ -5,7 +5,7 @@ public class Warrior extends Player {
     /* Class constructor*/
     public Warrior(String name, int level, int strength, int agility, int intelligence) {
         super(name, "Guerrier", "Coup d’Épée", "Coup de Rage", level, strength, agility, intelligence);
-        System.err.println(this.toString());
+        System.out.println(this.toString());
     }
 
     /* Class methods*/

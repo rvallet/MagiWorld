@@ -5,7 +5,7 @@ public class Wizard extends Player {
     /* Class constructor*/
     public Wizard(String name, int level, int strength, int agility, int intelligence) {
         super(name, "Mage", "Boule de Feu","Soin",level, strength, agility, intelligence);
-        System.err.println(this.toString());
+        System.out.println(this.toString());
     }
 
     /* Class methods*/
